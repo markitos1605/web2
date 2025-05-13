@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Gamer</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header id="inicio">
+        <h1>Mundo Gamer</h1>
+        <p>¡Descubre los mejores videojuegos y noticias del mundo gaming!</p>
+    </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="juegos.html">Juegos</a>
+        <a href="contacto.html">Contacto</a>
+        <span style="float: right; font-weight: bold;">Carrito: <span id="cart-count">0</span> juegos - Total: <span id="cart-total">$0.00</span></span>
+    </nav>
+    <main>
+        <section id="juegos" class="game-section">
+            <h2>Tabla de Juegos Disponibles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Juego</th>
+                        <th>Imagen</th>
+                        <th>Precio</th>
+                        <th>Comprar</th>
+                    </tr>
+                </thead>
+                <tbody id="game-table-body">
+                    <tr id="cyberpunk">
+                        <td><a href="cyber.html">Cyberpunk 2077</a></td>
+                        <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202008/0416/6Bo40lnWU0BhgrOUm7Cb6by3.png" alt="Cyberpunk 2077" class="game-image"></td>
+                        <td>$59.99</td>
+                        <td><button class="add-to-cart" data-title="Cyberpunk 2077" data-price="59.99">Añadir al Carrito</button></td>
+                    </tr>
+                    <tr id="witcher">
+                        <td><a href="witcher.html">The Witcher 3: Wild Hunt</a></td>
+                        <td><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg" alt="The Witcher 3" class="game-image"></td>
+                        <td>$49.99</td>
+                        <td><button class="add-to-cart" data-title="The Witcher 3" data-price="49.99">Añadir al Carrito</button></td>
+                    </tr>
+                    <tr id="gta">
+                        <td><a href="gta.html">Grand Theft Auto V</a></td>
+                        <td><img src="https://fotografias-neox.atresmedia.com/clipping/cmsimages02/2016/08/30/F1311F3B-298C-42B7-9D70-DD40576FAFC1/98.jpg?crop=624,351,x10,y0&width=1900&height=1069&optimize=high&format=webply" alt="GTA V" class="game-image"></td>
+                        <td>$29.99</td>
+                        <td><button class="add-to-cart" data-title="Grand Theft Auto V" data-price="29.99">Añadir al Carrito</button></td>
+                    </tr>
+                    <tr id="elden">
+                        <td><a href="elden.html">Elden Ring</a></td>
+                        <td><img src="https://image.api.playstation.com/vulcan/ap/rnd/202107/1612/Y5RHNmzAtc6sRYwZlYiKHAxN.png" alt="Elden Ring" class="game-image"></td>
+                        <td>$59.99</td>
+                        <td><button class="add-to-cart" data-title="Elden Ring" data-price="59.99">Añadir al Carrito</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="cart-summary"></div>
+            <button class="checkout" onclick="openPaymentModal()">Finalizar Pago</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mundo Gamer. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="overlay"></div>
+    <div id="payment-modal">
+        <h3>Proceso de Pago</h3>
+        <form id="payment-form" onsubmit="submitPayment(event)">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="text" placeholder="Dirección de envío" required>
+            <input type="text" placeholder="Número de tarjeta" required>
+            <p>Total a pagar: <span id="payment-total">$0.00</span></p>
+            <button type="submit">Pagar</button>
+            <button type="button" onclick="closePaymentModal()">Cancelar</button>
+        </form>
+    </div>
+
+    <script>
+        const cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const title = button.dataset.title;
+                const price = parseFloat(button.dataset.price);
+                cart.push({ title, price });
+                updateCartSummary();
+            });
+        });
+
+        function updateCartSummary() {
+            const cartCount = cart.length;
+            const cartTotal = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-count').textContent = cartCount;
+            document.getElementById('cart-total').textContent = '$' + cartTotal.toFixed(2);
+        }
+
+        function openPaymentModal() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('payment-modal').style.display = 'block';
+            document.getElementById('payment-total').textContent = document.getElementById('cart-total').textContent;
+        }
+
+        function closePaymentModal() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('payment-modal').style.display = 'none';
+        }
+
+        function submitPayment(event) {
+            event.preventDefault();
+            alert('Pago realizado con éxito!');
+            closePaymentModal();
+        }
+    </script>
+</body>
+</html>
+```

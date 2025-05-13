@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Juegos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <div class="cart-icon" onclick="showCheckout()">
+                🛒 <span class="cart-count">0</span> (<span id="cart-total">$0.00</span>)
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="tabs">
+            <div class="tab" data-tab="gta">Grand Theft Auto V</div>
+            <div class="tab" data-tab="elden">Elden Ring</div>
+            <div class="tab" data-tab="witcher">The Witcher 3</div>
+            <div class="tab" data-tab="cyberpunk">Cyberpunk 2077</div>
+        </div>
+        <div id="gta" class="tab-content">
+            <h1><a href="#" onclick="showSpecs('gta')">Grand Theft Auto V</a></h1>
+            <div class="video-container">
+                <iframe width="960" height="540" src="https://www.youtube.com/embed/QkkoHAzjnUs" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="game-info">
+                <div class="price-section">
+                    <h2>Precio: $29.99</h2>
+                    <button class="add-to-cart" data-title="Grand Theft Auto V" data-price="29.99">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div id="elden" class="tab-content">
+            <h1><a href="#" onclick="showSpecs('elden')">Elden Ring</a></h1>
+            <div class="video-container">
+                <iframe width="960" height="540" src="https://www.youtube.com/embed/E3Huy2cdih0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="game-info">
+                <div class="price-section">
+                    <h2>Precio: $59.99</h2>
+                    <button class="add-to-cart" data-title="Elden Ring" data-price="59.99">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div id="witcher" class="tab-content">
+            <h1><a href="#" onclick="showSpecs('witcher')">The Witcher 3: Wild Hunt</a></h1>
+            <div class="video-container">
+                <iframe width="960" height="540" src="https://www.youtube.com/embed/XHrskkHf958" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="game-info">
+                <div class="price-section">
+                    <h2>Precio: $49.99</h2>
+                    <button class="add-to-cart" data-title="The Witcher 3" data-price="49.99">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div id="cyberpunk" class="tab-content">
+            <h1><a href="#" onclick="showSpecs('cyberpunk')">Cyberpunk 2077</a></h1>
+            <div class="video-container">
+                <iframe width="960" height="540" src="https://www.youtube.com/embed/8X2kIfS6fb8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="game-info">
+                <div class="price-section">
+                    <h2>Precio: $59.99</h2>
+                    <button class="add-to-cart" data-title="Cyberpunk 2077" data-price="59.99">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div id="checkout" class="tab-content">
+            <h1>Finalizar Compra</h1>
+            <form>
+                <label>Nombre completo:<br><input type="text" required></label><br>
+                <label>Dirección de correo:<br><input type="email" required></label><br>
+                <label>Método de pago:<br>
+                    <select>
+                        <option>Tarjeta de crédito</option>
+                        <option>PayPal</option>
+                    </select>
+                </label><br>
+                <button type="submit">Pagar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Mundo Gamer. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            const cart = [];
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                    tab.classList.add('active');
+                });
+            });
+
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', () => {
+                    const title = button.dataset.title;
+                    const price = parseFloat(button.dataset.price);
+                    cart.push({ title, price });
+                    cartCount.textContent = cart.length;
+                    const total = cart.reduce((sum, item) => sum + item.price, 0);
+                    cartTotal.textContent = `$${total.toFixed(2)}`;
+                    alert(`${title} ha sido añadido al carrito.`);
+                });
+            });
+
+            window.showCheckout = function () {
+                contents.forEach(c => c.classList.remove('active'));
+                document.getElementById('checkout').classList.add('active');
+            }
+
+            window.showSpecs = function (tabId) {
+                contents.forEach(c => c.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

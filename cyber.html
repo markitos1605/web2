@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk 2077 - Detalles</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <div class="cart-icon">
+                🛒 <span id="cart-count">0</span> juegos - Total: <span id="cart-total">$0.00</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="game-detail">
+        <h1>Cyberpunk 2077</h1>
+
+        <div class="video-container">
+            <iframe width="960" height="540" 
+                src="https://www.youtube.com/embed/8X2kIfS6fb8" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="game-info">
+            <div class="price-section">
+                <h2>Precio: $59.99</h2>
+                <button class="add-to-cart" data-title="Cyberpunk 2077" data-price="59.99">Añadir al Carrito</button>
+            </div>
+
+            <div class="specifications">
+                <h2>Especificaciones</h2>
+                <ul>
+                    <li><strong>Género:</strong> RPG, Acción</li>
+                    <li><strong>Desarrollador:</strong> CD Projekt RED</li>
+                    <li><strong>Año:</strong> 2020</li>
+                    <li><strong>Plataformas:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S</li>
+                    <li><strong>Idiomas:</strong> Español, Inglés, y más</li>
+                </ul>
+            </div>
+
+            <div class="description">
+                <h2>Descripción</h2>
+                <p>Cyberpunk 2077 es un RPG de acción y aventura en mundo abierto ambientado en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mundo Gamer. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartSummary() {
+            const cartCount = cart.length;
+            const cartTotal = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-count').textContent = cartCount;
+            document.getElementById('cart-total').textContent = `$${cartTotal.toFixed(2)}`;
+        }
+
+        document.querySelector('.add-to-cart').addEventListener('click', () => {
+            const button = document.querySelector('.add-to-cart');
+            const title = button.dataset.title;
+            const price = parseFloat(button.dataset.price);
+            cart.push({ title, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartSummary();
+        });
+
+        updateCartSummary();
+    </script>
+</body>
+</html>

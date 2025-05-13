@@ -1,0 +1,406 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #c9c9c9;
+}
+
+header {
+    background-color: #4e4e50;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #f0a500;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    color: #f0a500;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+.game-section {
+    margin-bottom: 20px;
+}
+
+.game-section img {
+    max-width: 100%;
+    border-radius: 8px; /* Añadido para bordes redondeados */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #4e4e50;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #f0a500;
+}
+
+footer {
+    background-color: #4e4e50;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.game-image {
+    width: 150px; /* Define el ancho deseado */
+    height: 100px; /* Define la altura deseada */
+    object-fit: cover; /* Opcional: Ajusta la imagen para que cubra el espacio sin distorsionarse */
+}
+
+button.add-to-cart, button.checkout {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#cart-summary {
+    margin-top: 20px;
+    font-weight: bold;
+}
+#payment-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 1000;
+}
+#payment-modal h3 {
+    margin-top: 0;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+#payment-form input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+}
+
+/* Noticias*/
+body {
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+}
+nav {
+    background-color: #333; /* Fondo de la barra de navegación */
+    padding: 10px 0;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.cart-icon {
+    float: right;
+    font-size: 18px;
+    margin-right: 20px;
+}
+.game-detail {
+    padding: 20px;
+}
+h1 {
+    color: #fff; /* Color de título */
+    border-bottom: 2px solid #f0c040;
+    padding-bottom: 10px;
+}
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.price-section, .specifications, .description {
+    margin-bottom: 20px;
+}
+h2 {
+    color: #fff; /* Color de títulos secundarios */
+    margin-bottom: 10px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+button.add-to-cart {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color de botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    margin-top: 20px;
+}
+/* Estilos para el carrusel */
+.carousel-container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+.carousel-item img {
+    width: 100%; /* Ancho */
+    height: 400px; /* Altura fija */
+    object-fit: cover; /* Para mantener la proporción y cubrir el espacio */
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.carousel-button.prev {
+    left: 10px;
+}
+.carousel-button.next {
+    right: 10px;
+}
+.news-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/* Contacto*/
+body {
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+}
+nav {
+    background-color: #333; /* Fondo de la barra de navegación */
+    padding: 10px 0;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+h1 {
+    color: #fff; /* Color de título */
+    border-bottom: 2px solid #f0c040;
+    padding-bottom: 10px;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    margin-top: 20px;
+}
+
+/* Elden*/
+body {
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+}
+.cart-icon {
+    float: right;
+    font-size: 18px;
+}
+.game-detail {
+    padding: 20px;
+}
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.price-section, .specifications, .description {
+    margin-bottom: 20px;
+}
+button.add-to-cart {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* gta*/
+body {
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+}
+nav {
+    background-color: #333; /* Fondo de la barra de navegación */
+    padding: 10px 0;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.cart-icon {
+    float: right;
+    font-size: 18px;
+    margin-right: 20px;
+}
+.game-detail {
+    padding: 20px;
+}
+h1 {
+    color: #fff; /* Color de título */
+    border-bottom: 2px solid #f0c040;
+    padding-bottom: 10px;
+}
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.price-section, .specifications, .description {
+    margin-bottom: 20px;
+}
+h2 {
+    color: #fff; /* Color de títulos secundarios */
+    margin-bottom: 10px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+button.add-to-cart {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color de botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    margin-top: 20px;
+}
+
+/* cyber*/
+body {
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+}
+.cart-icon {
+    float: right;
+    font-size: 18px;
+}
+.game-detail {
+    padding: 20px;
+}
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.price-section, .specifications, .description {
+    margin-bottom: 20px;
+}
+button.add-to-cart {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* hola*/
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.tabs {
+    display: flex;
+    cursor: pointer;
+}
+.tabs div {
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+}
+.tabs div.active {
+    background-color: #ccc;
+}
+.cart-icon {
+    float: right;
+    cursor: pointer;
+}
+#cart-total {
+    font-weight: bold;
+}
+
+

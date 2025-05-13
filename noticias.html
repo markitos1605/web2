@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias de Videojuegos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <div class="cart-icon">
+                🛒 <span id="cart-count">0</span> juegos - Total: <span id="cart-total">$0.00</span>
+            </div>
+        </nav>
+    </header>
+
+    <h1>Noticias de Videojuegos</h1>
+
+    <div class="carousel-container">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="https://preview.redd.it/abeoutwi0uld1.jpeg?auto=webp&s=2610322871153ee736a14ea502a88d8b3e0ece1d" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://support.activision.com/content/dam/atvi/support/article-assets/hero-banners/modern-warfare-iii/MWIII_Hero_ban_beta.png" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.ctfassets.net/rporu91m20dc/6lhvsMLbeHDnZGQSKUP6Kn/d438040c252215ce546e568604c5c287/Starfield_SFHero_Date.jpg" alt="Imagen 3">
+            </div>
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+    </div>
+
+    <div class="news-item">
+        <h2>Nuevo juego de Zelda anunciado</h2>
+        <p>Nintendo ha anunciado un nuevo juego de Zelda para la Switch. Se espera que el juego se lance en 2024.</p>
+    </div>
+
+    <div class="news-item">
+        <h2>Call of Duty Modern Warfare III se retrasa</h2>
+        <p>Activision ha anunciado que el lanzamiento de Call of Duty Modern Warfare III se retrasará hasta noviembre de 2023.</p>
+    </div>
+
+    <div class="news-item">
+        <h2>El nuevo juego de Starfield está rompiendo récords</h2>
+        <p>El nuevo juego de Bethesda, Starfield, está rompiendo récords de ventas y jugadores. El juego ha sido un éxito rotundo.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Noticias de Videojuegos</p>
+    </footer>
+
+    <script>
+        const carouselInner = document.querySelector('.carousel-inner');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentItem = 0;
+        const itemWidth = carouselInner.offsetWidth;
+
+        prevButton.addEventListener('click', () => {
+            currentItem = (currentItem - 1 + carouselInner.children.length) % carouselInner.children.length;
+            carouselInner.style.transform = `translateX(-${currentItem * itemWidth}px)`;
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentItem = (currentItem + 1) % carouselInner.children.length;
+            carouselInner.style.transform = `translateX(-${currentItem * itemWidth}px)`;
+        });
+    </script>
+</body>
+</html>
