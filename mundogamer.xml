@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Videojuegos de Mundo Gamer</title>
+        <link>https://markitos1605.github.io/web2/</link>
+        <description>Último catalogo de Videojuegos</description>
+        <language>es-es</language>
+        <lastBuildDate>Tue, 20 May 2025 10:00:00 GMT</lastBuildDate>
+
+        <item>
+            <title>Nueva versión de Videojuegos implementada</title>
+            <link>https://markitos1605.github.io/web2/noticias.html</link>
+            <description>Hemos actualizado nuestros sistemas a la versión 2.0, mejorando el rendimiento.</description>
+            <pubDate>Tue, 20 May 2025 09:30:00 GMT</pubDate>
+            <guid>https://www.misitio.com/noticias/version-nueva</guid>
+        </item>
+        <item>
+            <title>Mantenimiento programado este fin de semana</title>
+            <link>https://www.misitio.com/noticias/mantenimiento</link>
+            <description>Se realizará un mantenimiento de servidores el domingo por la madrugada, cualquier duda informe al contacto.</description>
+            <pubDate>Tue, 20 May 2025 09:00:00 GMT</pubDate>
+            <guid>https://markitos1605.github.io/web2/contacto.html</guid>
+        </item>
+    </channel>
+</rss>
