@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventario SYSTEM "mundogamer.dtd">
+<inventario>
+    <Juegos id="PC001">
+        <empresa>Nintendo 5</empresa>
+        <usuario>Marcos Feliz</usuario>
+        <nombre_tipo>Inazuma Eleven</nombre_tipo>
+    </ordenador>
+    <ordenador id="PC002">
+        <empresa>Nintendo 5</empresa>
+        <usuario>Macaco</usuario>
+        <nombre_tipo>Naruto</nombre_tipo>
+    </ordenador>
+</inventario>
