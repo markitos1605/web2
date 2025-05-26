@@ -1,4 +1,4 @@
-<!-- DTD para el inventario juegos de la empresa -->
+<!-- DTD para el inventario de juegos de la empresa -->
 <!ELEMENT inventario (Juegos+)>
 <!ELEMENT Juegos (empresa, usuario, nombre_tipo)>
 <!ELEMENT empresa (#PCDATA)>
