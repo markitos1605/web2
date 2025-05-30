@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE inventario SYSTEM "mundogamer.dtd">
+<?xml-stylesheet type="text/xsl" href="inventario.xsl"?>
+<!DOCTYPE inventario [
+<!ELEMENT inventario (Juegos+)>
+<!ELEMENT Juegos (empresa, usuario, nombre_tipo)>
+<!ATTLIST Juegos id ID #REQUIRED>
+<!ELEMENT empresa (#PCDATA)>
+<!ELEMENT usuario (#PCDATA)>
+<!ELEMENT nombre_tipo (#PCDATA)>
+]>
 <inventario>
     <Juegos id="J001">
-        <empresa>Nintendo 5</empresa>
+        <empresa>Nintendo</empresa>
         <usuario>Marcos Feliz</usuario>
         <nombre_tipo>Inazuma Eleven</nombre_tipo>
     </Juegos>
     <Juegos id="J002">
-        <empresa>Nintendo 5</empresa>
+        <empresa>Nintendo</empresa>
         <usuario>Macaco</usuario>
         <nombre_tipo>Naruto</nombre_tipo>
     </Juegos>
