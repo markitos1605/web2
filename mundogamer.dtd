@@ -1,9 +1,6 @@
-<!-- DTD para el inventario de juegos de la empresa -->
 <!ELEMENT inventario (Juegos+)>
 <!ELEMENT Juegos (empresa, usuario, nombre_tipo)>
+<!ATTLIST Juegos id ID #REQUIRED>
 <!ELEMENT empresa (#PCDATA)>
 <!ELEMENT usuario (#PCDATA)>
 <!ELEMENT nombre_tipo (#PCDATA)>
-<!ATTLIST Juegos
-    id ID #REQUIRED
->
